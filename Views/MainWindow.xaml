@@ -1,0 +1,565 @@
+﻿<Window x:Class="Demo.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:convert="clr-namespace:Demo.ViewModels"
+        xmlns:local="clr-namespace:Demo.Views"
+        xmlns:ViewModel="clr-namespace:Demo.ViewModels"
+        mc:Ignorable="d"
+        x:Name="MainWindow1"
+        xmlns:MyControl="clr-namespace:ZMCL.MyControl;assembly=ZMCL"
+        xmlns:MyWhite="clr-namespace:ZMCL.MyControl.WhiteStyle;assembly=ZMCL"
+        Title="MainWindow" Height="680" Width="880">
+    <Window.DataContext>
+        <ViewModel:MainWindowViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+
+        <Style x:Key="TextBlockStyle1"  TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD7C9A7"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="0.7" ScaleY="0.8"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" Direction="1" ShadowDepth="1" Opacity="10" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="TextBlockStyle2" BasedOn="{StaticResource TextBlockStyle1}" TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFE7FFCE" Offset="0.017"/>
+                        <GradientStop Color="#FF81BF37" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="TextBlockStyle3" BasedOn="{StaticResource TextBlockStyle1}" TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFFF0CC" Offset="0"/>
+                        <GradientStop Color="#FF985C00" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="TextBlockStyle4" BasedOn="{StaticResource TextBlockStyle1}" TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF59A27A" Offset="0"/>
+                        <GradientStop Color="#FF007C04" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <convert:StringToInt32Converter x:Key="StringToInt32Converter"/>
+        <convert:StringToByteConverter x:Key="StringToByteConverter"/>
+        <convert:HexStringToByteConverter x:Key="HexStringToByteConverter"/>
+        <convert:HexStringToByteConverter2 x:Key="HexStringToByteConverter2"/>
+        <convert:ByteStringToByteConverter x:Key="ByteStringToByteConverter"/>
+    </Window.Resources>
+
+
+    <Viewbox Width="auto" Height="auto" Stretch="Fill">
+        <Canvas Height="680" Width="880">
+            <StackPanel Orientation="Vertical" Canvas.Left="510" Canvas.Top="280">
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <Ellipse Width="10" Height="10" Fill="{x:Null}" />
+                <Ellipse Width="10" Height="10" Fill="#FFBF6E00" />
+                <StackPanel.Effect>
+                    <DropShadowEffect Color="Silver" Direction="300" BlurRadius="8"/>
+                </StackPanel.Effect>
+            </StackPanel>
+            <!--<Line X1="300" Y1="110" X2="300" Y2="500" StrokeThickness="5" Canvas.Left="214" Canvas.Top="164"  >
+                <Line.Effect>
+                    <DropShadowEffect Color="Silver" BlurRadius="10" Direction="300" ShadowDepth="8"/>
+                </Line.Effect>
+                <Line.Stroke>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF005BFC" Offset="1"/>
+                        <GradientStop Color="#FF1967F1"/>
+                    </LinearGradientBrush>
+                </Line.Stroke>
+            </Line>-->
+            <MyControl:UcTextBox 
+                Watermark="调试数据"
+                TextWrapping="Wrap"
+                Text="{Binding DisplayString,UpdateSourceTrigger=PropertyChanged}"
+                Width="828" Height="98" Canvas.Top="156" Canvas.Left="26"/>
+
+            <MyControl:UcTextBlock
+                Style="{StaticResource TextBlockStyle1}"
+                Text="PanID" 
+                Canvas.Left="26" Canvas.Top="68" />
+            <MyControl:UcTextBlock 
+                Style="{StaticResource TextBlockStyle1}" 
+                Text="{Binding 
+                    MainDataModel.Channel,
+                    UpdateSourceTrigger=PropertyChanged,
+                    FallbackValue=0}" 
+                Canvas.Top="110" 
+                Canvas.Left="568" />
+
+            <MyControl:UcTextBlock
+                Style="{StaticResource TextBlockStyle2}"
+                Text="通道号码" 
+                Canvas.Left="24" Canvas.Top="427" />
+            <MyControl:UcTextBox  
+                Text="{Binding 
+                ChannelConfigurationInfo,FallbackValue=0,
+                Converter={StaticResource ByteStringToByteConverter}}"
+                Width="80" Height="30" Canvas.Left="122" Canvas.Top="427" />
+            <MyControl:UcButton
+                Command="{Binding ConfigureCannelCommand }"
+                IsEnabled="{Binding IsPortOpen}"
+                Content="发送" FontSize="14"
+                Width="60" Height="30"  
+                Canvas.Left="211" 
+                Canvas.Top="428"/>
+
+            <MyControl:UcTextBlock
+                Style="{StaticResource TextBlockStyle1}"
+                Text="通道号码" 
+                Canvas.Left="566" Canvas.Top="68" />
+            <MyControl:UcTextBlock 
+                Style="{StaticResource TextBlockStyle1}" 
+                Text="{Binding 
+                MainDataModel.PanID,
+                UpdateSourceTrigger=PropertyChanged,
+                FallbackValue=0}" 
+                Canvas.Top="110" 
+                Canvas.Left="28" />
+
+            <MyControl:UcTextBlock
+                Style="{StaticResource TextBlockStyle2}"
+                Text="Pan地址" 
+                Canvas.Left="24" Canvas.Top="280" />
+            <MyControl:UcTextBox 
+                
+                Text="{Binding 
+                PanIDConfigurationInfo,FallbackValue=0000,
+                Converter={StaticResource HexStringToByteConverter},
+                Mode=OneWayToSource}"
+                Width="80" Height="30"  Canvas.Left="122" Canvas.Top="280" />
+            <MyControl:UcButton 
+                Command="{Binding ConfigureBlueToothCommand}"
+                IsEnabled="{Binding IsPortOpen}"
+                Width="60" Height="30" 
+                Content="发送" FontSize="14"
+                Canvas.Left="425" Canvas.Top="480"/>
+            <MyControl:UcButton 
+                Command="{Binding ConfigurePanIDCommand}"
+                IsEnabled="{Binding IsPortOpen}"
+                Content="发送" FontSize="14"
+                Width="60" Height="30"  
+                Canvas.Left="211" Canvas.Top="280"/>
+
+            <MyControl:UcTextBlock
+                Style="{StaticResource TextBlockStyle1}"
+                Text="本地地址" 
+                Canvas.Left="207" Canvas.Top="68" />
+            <MyControl:UcTextBlock 
+                Style="{StaticResource TextBlockStyle1}" 
+                Text="{Binding 
+                MainDataModel.LocalAddress,
+                UpdateSourceTrigger=PropertyChanged,
+                FallbackValue=0}" 
+                Canvas.Top="110" 
+                Canvas.Left="209" />
+            <MyControl:UcTextBlock
+                Style="{StaticResource TextBlockStyle2}"
+                Text="本地地址" 
+                Canvas.Left="24" Canvas.Top="330" />
+            <MyControl:UcTextBox 
+                Text="{Binding 
+                LocalIDConfigurationInfo,FallbackValue=0000,
+                Converter={StaticResource HexStringToByteConverter},
+                Mode=OneWayToSource}"
+                Width="80" Height="30" Canvas.Left="122" 
+                Canvas.Top="330" />
+            <MyControl:UcButton 
+                Command="{Binding WriteHoldOnCommand}"
+                IsEnabled="{Binding IsPortOpen}"
+                Content="发送" FontSize="14"
+                Width="60" Height="30"  
+                Canvas.Left="425" Canvas.Top="530"/>
+            <MyControl:UcButton 
+                Command="{Binding ConfigureLocalIDCommand}"
+                IsEnabled="{Binding IsPortOpen}"
+                Content="发送" FontSize="14"
+                Width="60" Height="30"  
+                Canvas.Left="211" Canvas.Top="330" />
+
+            <MyControl:UcTextBlock
+                Style="{StaticResource TextBlockStyle1}"
+                Text="目标地址"
+                Canvas.Left="389" Canvas.Top="68" />
+            <MyControl:UcTextBlock 
+                Style="{StaticResource TextBlockStyle1}" 
+                Text="{Binding 
+                MainDataModel.TargetAddress,
+                UpdateSourceTrigger=PropertyChanged,
+                FallbackValue=0}" 
+                Canvas.Top="110" 
+                Canvas.Left="389" />
+            <MyControl:UcTextBlock
+                Style="{StaticResource TextBlockStyle2}"
+                Text="目标地址" 
+                Canvas.Left="24" Canvas.Top="379" />
+            <MyControl:UcTextBox 
+                Text="{Binding 
+                TargetIDConfigurationInfo,FallbackValue=0000,
+                Converter={StaticResource HexStringToByteConverter},
+                Mode=OneWayToSource}"
+                Width="80" Height="30" Canvas.Left="122" 
+                Canvas.Top="379" />
+            <MyControl:UcButton 
+                Command="{Binding WriteZigbeeCommand}"
+                IsEnabled="{Binding IsPortOpen}"
+                 Content="发送" FontSize="14"
+                Width="60" Height="30"  
+                Canvas.Left="425" Canvas.Top="580"/>
+            <MyControl:UcButton 
+                Command="{Binding ConfigureTargetIDCommand}"
+                IsEnabled="{Binding IsPortOpen}"
+                Content="发送" FontSize="14"
+                Width="60" Height="30"  
+                Canvas.Left="211" Canvas.Top="379"/>
+
+
+
+            <MyControl:UcTextBlock 
+                Style="{DynamicResource TextBlockStyle2}"
+                Text="蓝牙名称" Canvas.Left="20" Canvas.Top="480" />
+            <MyControl:UcTextBox 
+                Text="{Binding 
+                BlueToothConfigurationInfo1,FallbackValue=TJSP}"
+                Width="105" Height="30" Canvas.Left="119" Canvas.Top="480" />
+            <MyControl:UcTextBox 
+                 Text="{Binding 
+                BlueToothConfigurationInfo2,FallbackValue=A}"
+                Width="70" Height="30" Canvas.Left="232" Canvas.Top="480" />
+            <MyControl:UcTextBox 
+                 Text="{Binding 
+                BlueToothConfigurationInfo3,FallbackValue=0002}"
+                Width="105" Height="30" Canvas.Left="311" Canvas.Top="481" />
+
+
+            <MyControl:UcTextBlock 
+                Style="{DynamicResource TextBlockStyle2}"
+                Text="抬起时间" Canvas.Left="20" Canvas.Top="530" />
+            <MyControl:UcTextBox 
+                Watermark="没车时间"
+                Text="{Binding HoldOn1,
+                Converter={StaticResource StringToInt32Converter}}"
+                Width="70" Height="30" Canvas.Left="119" Canvas.Top="530" />
+            <MyControl:UcTextBox 
+                Watermark="再起一次时间"
+                 Text="{Binding HoldOn2,
+                Converter={StaticResource StringToInt32Converter}}"
+                Width="70" Height="30" Canvas.Left="195" Canvas.Top="530" />
+            <MyControl:UcTextBox 
+                Watermark="次数"
+                 Text="{Binding HoldOn3,
+                Converter={StaticResource StringToInt32Converter}}"
+                Width="50" Height="30" Canvas.Left="271" Canvas.Top="530" />
+            <MyControl:UcTextBox 
+                Watermark="蓝牙打开没车时间"
+                 Text="{Binding HoldOn4,
+                Converter={StaticResource StringToInt32Converter}}"
+                Width="90" Height="30" Canvas.Left="326" Canvas.Top="530" />
+
+            <MyControl:UcTextBlock 
+                Style="{DynamicResource TextBlockStyle2}"
+                Text="zigbee时间" Canvas.Left="20" Canvas.Top="580" />
+            <MyControl:UcTextBox 
+                Watermark="多久发一次（秒）"
+                Text="{Binding Zigbee1,
+                Converter={StaticResource StringToInt32Converter}}"
+                Width="130" Height="30" Canvas.Left="147" Canvas.Top="580" />
+            <MyControl:UcTextBox 
+                Watermark="多久休眠（10ms）"
+                Text="{Binding Zigbee2,
+                Converter={StaticResource StringToInt32Converter}}"
+                Width="130" Height="30" Canvas.Left="286" Canvas.Top="580" />
+
+            <MyControl:UcTextBlock
+                Style="{StaticResource TextBlockStyle2}"
+                Text="选择串口" 
+                Canvas.Left="153" Canvas.Top="19" />
+
+            <MyControl:UcTextBlock
+                Style="{StaticResource TextBlockStyle2}"
+                Text="波特率" 
+                Canvas.Left="380" Canvas.Top="19" />
+
+            <MyControl:UcTextBlock
+                Style="{StaticResource TextBlockStyle3}"
+                Text="{Binding _MyBuadRate}" 
+                Canvas.Left="450" Canvas.Top="19" />
+
+            <MyControl:UcTextBlock
+                Style="{StaticResource TextBlockStyle2}"
+                Text="数据位" 
+                Canvas.Left="550" Canvas.Top="19" />
+
+            <MyControl:UcTextBlock
+                Style="{StaticResource TextBlockStyle3}"
+                Text="{Binding _MyDataBits}" 
+                Canvas.Left="620" Canvas.Top="19" />
+
+            <MyControl:UcTextBlock
+                Style="{StaticResource TextBlockStyle2}"
+                Text="通道号码" 
+                Canvas.Left="546" Canvas.Top="429" />
+            <MyControl:UcTextBox  
+                Text="{Binding 
+                ChannelModificationInfo,FallbackValue=0,
+                Converter={StaticResource ByteStringToByteConverter}}"
+                Width="80" Height="30" Canvas.Left="643" Canvas.Top="429" />
+            <MyControl:UcButton 
+                Command="{Binding ModifyChannelCommand}"
+                IsEnabled="{Binding IsPortOpen}"
+                Content="修改" FontSize="14"
+                Width="60" Height="30"  
+                Canvas.Left="736" Canvas.Top="429" />
+
+            <MyControl:UcTextBlock
+                Style="{StaticResource TextBlockStyle2}"
+                Text="Pan地址" 
+                Canvas.Left="546" Canvas.Top="278" />
+            <MyControl:UcTextBox 
+                Text="{Binding 
+                PanIDModificationInfo,FallbackValue=0000,
+                Converter={StaticResource HexStringToByteConverter},
+                Mode=OneWayToSource}"
+                Width="80" Height="30" Canvas.Left="643" Canvas.Top="279" />
+            <MyControl:UcButton 
+                Command="{Binding ModifyPanIDCommand}"
+                IsEnabled="{Binding IsPortOpen}"
+                Content="修改" FontSize="14"
+                Width="60" Height="30"  
+                Canvas.Left="736" Canvas.Top="278"/>
+
+            <MyControl:UcTextBlock
+                Style="{StaticResource TextBlockStyle2}"
+                Text="本地地址" 
+                Canvas.Left="544" Canvas.Top="328" />
+            <MyControl:UcTextBox 
+                Text="{Binding 
+                LocalIDModificationInfo,FallbackValue=0000,
+                Converter={StaticResource HexStringToByteConverter},
+                Mode=OneWayToSource}"
+                Width="80" Height="30" Canvas.Left="643" 
+                Canvas.Top="328" />
+            <MyControl:UcButton 
+                Command="{Binding ModifyLocalIDCommand}"
+                IsEnabled="{Binding IsPortOpen}"
+                Content="修改" FontSize="14"
+                Width="60" Height="30"  
+                Canvas.Left="736" Canvas.Top="328" />
+
+            <MyControl:UcTextBlock
+                Style="{StaticResource TextBlockStyle2}"
+                Text="目标地址" 
+                Canvas.Left="546" Canvas.Top="380" />
+            <MyControl:UcTextBox 
+                Text="{Binding 
+                TargetIDModificationInfo,FallbackValue=0000,
+                Converter={StaticResource HexStringToByteConverter},
+                Mode=OneWayToSource}"
+                Width="80" Height="30" Canvas.Left="643" 
+                Canvas.Top="380" />
+            <MyControl:UcButton 
+                Command="{Binding ModifyTargetIDInfoCommand}"
+                IsEnabled="{Binding IsPortOpen}"
+                Content="修改" FontSize="14"
+                Width="60" Height="30"  
+                Canvas.Left="736" Canvas.Top="380"/>
+
+            <MyControl:UcButton 
+                Command="{Binding ConfigureFinishCommand}"
+                IsEnabled="{Binding IsPortOpen}"
+                Width="269" Height="38"  
+                Content="完成" FontSize="14"
+                Canvas.Left="147" Canvas.Top="626"/>
+
+            <MyWhite:MyCheckBox 
+                x:Name="MyCheckBox_PortSwitch"
+                IsChecked="{Binding IsPortOpen}"  
+                Canvas.Left="31" 
+                Canvas.Top="10" Height="50" Width="100" />
+
+            <MyControl:MyTriangleButton 
+                Command="{Binding Write433Command}"
+                IsEnabled="{Binding IsPortOpen}"
+                Width="80" Height="52"  
+                FontSize="14"
+                Canvas.Left="755" Canvas.Top="524">
+                <MyControl:MyTriangleButton.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90.2"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </MyControl:MyTriangleButton.LayoutTransform>
+                <MyControl:MyTriangleButton.Content>
+                    <TextBlock Text="433"/>
+                </MyControl:MyTriangleButton.Content>
+            </MyControl:MyTriangleButton>
+
+            <MyControl:MyTriangleButton 
+                Command="{Binding ConfigureLockOnCommand}"
+                IsEnabled="{Binding IsPortOpen}"
+                Width="80" Height="52"  
+                FontSize="14"
+                Canvas.Left="673" Canvas.Top="472">
+                <MyControl:MyTriangleButton.Content>
+                    <TextBlock Text="开锁"/>
+                </MyControl:MyTriangleButton.Content>
+            </MyControl:MyTriangleButton>
+
+            <MyControl:MyTriangleButton 
+                Command="{Binding ConfigureLockOffCommand}"
+                IsEnabled="{Binding IsPortOpen}"
+                Width="80" Height="50"  
+                FontSize="14"
+                Canvas.Left="669" Canvas.Top="596">
+                <MyControl:MyTriangleButton.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </MyControl:MyTriangleButton.LayoutTransform>
+                <MyControl:MyTriangleButton.Content>
+                    <TextBlock Text="关锁" Margin="-52,-31,52,31">
+                        <TextBlock.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="180"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBlock.LayoutTransform>
+                    </TextBlock>
+                </MyControl:MyTriangleButton.Content>
+            </MyControl:MyTriangleButton>
+            <MyControl:UcButton
+                Content="显示ID" FontSize="14"
+                Width="113" Height="32" 
+                Canvas.Left="540" Canvas.Top="515"/>
+            <MyControl:UcButton
+                Command="{Binding BatchModifyCommand}"
+                IsEnabled="{Binding IsPortOpen}"
+                FontSize="14"
+                Width="43" Height="182" 
+                Canvas.Left="811" Canvas.Top="277">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="修" Foreground="#FFA57300" FontSize="16"/>
+                    <TextBlock Text="改" Foreground="#FFA57300" FontSize="16"/>
+                </StackPanel>
+            </MyControl:UcButton>
+
+            <MyControl:UcButton
+                Content="倒计时2s开始" FontSize="14"
+                Width="113" Height="32" 
+                Canvas.Left="540" Canvas.Top="568"/>
+
+            <MyControl:UcComboBox
+                x:Name="cbx1"
+                Width="90" Height="42" FontSize="14"
+                ItemsSource="{Binding SerialPortNames}" 
+                SelectedItem="{Binding 
+                    SelectedPortName,
+                    Mode=OneWayToSource,
+                    UpdateSourceTrigger=PropertyChanged}"
+                Canvas.Left="253" 
+                Canvas.Top="14" >
+                <ComboBox.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFC3AA0B" Offset="1"/>
+                        <GradientStop Color="#FF5F4D04"/>
+                    </LinearGradientBrush>
+                </ComboBox.Foreground>
+            </MyControl:UcComboBox>
+
+            <MyControl:UcGlassButton 
+                IsEnabled="{Binding IsPortOpen}"
+                Content="查询" 
+                Foreground="#FF0093FF"
+                Width="60" Height="60"  
+                Canvas.Left="714" Margin="0" 
+                Canvas.Top="83"
+                Command="{Binding QueryCommand}"/>
+
+            <MyControl:UcGlassButton 
+                IsEnabled="{Binding IsPortOpen}"
+                Content="重置" 
+                Foreground="#FF0093FF"
+                Width="60" Height="60"  
+                Canvas.Left="714" Margin="0" 
+                Canvas.Top="10"
+                Command="{Binding ResetCommand}"/>
+        </Canvas>
+    </Viewbox>
+</Window>
